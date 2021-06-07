@@ -1,19 +1,21 @@
 package cucumberhooks;
 
 import Base.BasePage;
+import Pages.GMIHomePage;
 import Utils.ConfigReaders;
-import org.junit.After;
-import org.junit.Before;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 
 import java.util.Properties;
 
 public class Hooks {
 
-    private BasePage basePage;
-    private WebDriver driver;
-    private ConfigReaders configReaders;
+    public BasePage basePage;
+    public WebDriver driver;
+    public ConfigReaders configReaders;
     public Properties prop;
+    public GMIHomePage homePage;
 
     // before all test initilaze prop file
     @Before
@@ -25,9 +27,8 @@ public class Hooks {
     public void lunchBrowser(){
         String browserType = prop.getProperty("browser"); // pick what browser to lunch
         basePage = new BasePage();
-        driver = basePage.init_driver(browserType);
+        driver = basePage.init_driver(browserType); }
 
-    }
     @After
     public void tearDown(){
         driver.quit();
