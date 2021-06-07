@@ -10,6 +10,8 @@ import java.util.Properties;
 
 public class Hooks {
 
+
+    //just testing
     private BasePage basePage;
     private WebDriver driver;
     private ConfigReaders configReaders;
